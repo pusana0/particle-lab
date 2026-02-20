@@ -1,10 +1,6 @@
-
-
 class Particle:
-    def __init__(self, x=0, y=0, v_x=0, v_y=0 ,a_x=0,a_y=0):
-        self.x = x
-        self.y = y
-        self.v_x = v_x
-        self.v_y = v_y
-        self.a_x = a_x
-        self.a_y = a_y
+    def __init__(self, pos=[0.0, 0.0], vel=[0.0, 0.0], mass=1.0):
+        self.pos = pos
+        self.vel = vel
+        self.mass = mass
+        self.force = [0.0, 0.0]
