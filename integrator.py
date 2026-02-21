@@ -9,8 +9,8 @@ class EulerIntegrator(Integrator):
             a_x = particle.force[0] / particle.mass
             a_y = particle.force[1] / particle.mass
 
-            particle.vel[0] += a_x * dt 
-            particle.vel[1] += a_y * dt
+            particle.velocity[0] += a_x * dt 
+            particle.velocity[1] += a_y * dt
 
-            particle.pos[0] += particle.vel[0] * dt 
-            particle.pos[1] += particle.vel[1] * dt 
+            particle.position[0] += particle.velocity[0] * dt 
+            particle.position[1] += particle.velocity[1] * dt 
