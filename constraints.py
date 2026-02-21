@@ -1,16 +1,16 @@
 import physics
 
 class Rod:
-    def __init__(self, lenght, anchor1, anchor2):
+    def __init__(self, length, anchor1, anchor2):
         self.anchor1 = anchor1 
         self.anchor2 = anchor2
-        self.lenght = lenght
+        self.length = length
         
     def constrain(self): # implementation is positional for now, velocity based correction is planned 
         distance = physics.compute_distance(self.anchor1.position, self.anchor2.position)
         if distance == 0:
             return
-        error = distance - self.lenght
+        error = distance - self.length
         correction = error / 2
         dx, dy = physics.compute_deltas(self.anchor1.position, self.anchor2.position)
         direction_x = dx / distance
@@ -23,3 +23,4 @@ class Rod:
         self.anchor1.position[1] += direction_y * correction * (w1/w_sum)
         self.anchor2.position[0] -= direction_x * correction * (w2/w_sum)
         self.anchor2.position[1] -= direction_y * correction * (w2/w_sum)
+        # there is quite a lot to fix here honestly, move the maths to world.py just to start
